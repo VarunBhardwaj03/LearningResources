@@ -1,4 +1,4 @@
-PyTorch Beginner Tutorials from my YouTube channel.
+PyTorch Beginner Tutorials
 
 ## Watch the Playlist
   [![Alt text](https://img.youtube.com/vi/EMXfZB8FVUA/hqdefault.jpg)](https://www.youtube.com/watch?v=EMXfZB8FVUA&list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4)
