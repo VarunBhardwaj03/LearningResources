@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=A Gentle Introduction to Exploratory Data Analysis - Towards Data Science
+Exec=/opt/google/chrome/google-chrome --profile-directory=Default --app-id=jlkdkcjdebcgkhjmhbkdgcihgdjmlnhi
+Icon=chrome-jlkdkcjdebcgkhjmhbkdgcihgdjmlnhi-Default
+StartupWMClass=crx_jlkdkcjdebcgkhjmhbkdgcihgdjmlnhi
