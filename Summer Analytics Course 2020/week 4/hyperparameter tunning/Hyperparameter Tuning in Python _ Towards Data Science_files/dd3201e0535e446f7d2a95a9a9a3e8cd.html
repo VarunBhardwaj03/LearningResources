@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://towardsdatascience.com/media/dd3201e0535e446f7d2a95a9a9a3e8cd -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>lr_gridsearch.py – Medium</title><meta name="description" content="GitHub Gist: instantly share code, notes, and snippets."><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./5c3e9695f4d71cad7edce278636fc598.js" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-31007ea0d3bd9f80540adfbc55afc7bd.css"><div id="gist94672570" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-lr_gridsearch-py" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-python ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-lr_gridsearch-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-lr_gridsearch-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">penalty</span> <span class="pl-c1">=</span> [<span class="pl-s">'l1'</span>, <span class="pl-s">'l2'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-lr_gridsearch-py-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-v">C</span> <span class="pl-c1">=</span> [<span class="pl-c1">0.0001</span>, <span class="pl-c1">0.001</span>, <span class="pl-c1">0.01</span>, <span class="pl-c1">0.1</span>, <span class="pl-c1">1</span>, <span class="pl-c1">10</span>, <span class="pl-c1">100</span>, <span class="pl-c1">1000</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-lr_gridsearch-py-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">class_weight</span> <span class="pl-c1">=</span> [{<span class="pl-c1">1</span>:<span class="pl-c1">0.5</span>, <span class="pl-c1">0</span>:<span class="pl-c1">0.5</span>}, {<span class="pl-c1">1</span>:<span class="pl-c1">0.4</span>, <span class="pl-c1">0</span>:<span class="pl-c1">0.6</span>}, {<span class="pl-c1">1</span>:<span class="pl-c1">0.6</span>, <span class="pl-c1">0</span>:<span class="pl-c1">0.4</span>}, {<span class="pl-c1">1</span>:<span class="pl-c1">0.7</span>, <span class="pl-c1">0</span>:<span class="pl-c1">0.3</span>}]</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-lr_gridsearch-py-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">solver</span> <span class="pl-c1">=</span> [<span class="pl-s">'liblinear'</span>, <span class="pl-s">'saga'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-lr_gridsearch-py-LC5" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-lr_gridsearch-py-LC6" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">param_grid</span> <span class="pl-c1">=</span> <span class="pl-en">dict</span>(<span class="pl-s1">penalty</span><span class="pl-c1">=</span><span class="pl-s1">penalty</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-lr_gridsearch-py-LC7" class="blob-code blob-code-inner js-file-line">                  <span class="pl-v">C</span><span class="pl-c1">=</span><span class="pl-v">C</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-lr_gridsearch-py-LC8" class="blob-code blob-code-inner js-file-line">                  <span class="pl-s1">class_weight</span><span class="pl-c1">=</span><span class="pl-s1">class_weight</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-lr_gridsearch-py-LC9" class="blob-code blob-code-inner js-file-line">                  <span class="pl-s1">solver</span><span class="pl-c1">=</span><span class="pl-s1">solver</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-lr_gridsearch-py-LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-lr_gridsearch-py-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">grid</span> <span class="pl-c1">=</span> <span class="pl-v">GridSearchCV</span>(<span class="pl-s1">estimator</span><span class="pl-c1">=</span><span class="pl-s1">logistic</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-lr_gridsearch-py-LC12" class="blob-code blob-code-inner js-file-line">                    <span class="pl-s1">param_grid</span><span class="pl-c1">=</span><span class="pl-s1">param_grid</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-lr_gridsearch-py-LC13" class="blob-code blob-code-inner js-file-line">                    <span class="pl-s1">scoring</span><span class="pl-c1">=</span><span class="pl-s">'roc_auc'</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-lr_gridsearch-py-LC14" class="blob-code blob-code-inner js-file-line">                    <span class="pl-s1">verbose</span><span class="pl-c1">=</span><span class="pl-c1">1</span>,</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-lr_gridsearch-py-LC15" class="blob-code blob-code-inner js-file-line">                    <span class="pl-s1">n_jobs</span><span class="pl-c1">=</span><span class="pl-c1">-</span><span class="pl-c1">1</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-lr_gridsearch-py-LC16" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">grid_result</span> <span class="pl-c1">=</span> <span class="pl-s1">grid</span>.<span class="pl-en">fit</span>(<span class="pl-v">X_train</span>, <span class="pl-s1">y_train</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-lr_gridsearch-py-LC17" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-lr_gridsearch-py-LC18" class="blob-code blob-code-inner js-file-line"><span class="pl-en">print</span>(<span class="pl-s">'Best Score: '</span>, <span class="pl-s1">grid_result</span>.<span class="pl-s1">best_score_</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-lr_gridsearch-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-lr_gridsearch-py-LC19" class="blob-code blob-code-inner js-file-line"><span class="pl-en">print</span>(<span class="pl-s">'Best Params: '</span>, <span class="pl-s1">grid_result</span>.<span class="pl-s1">best_params_</span>)</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/terrah27/5c3e9695f4d71cad7edce278636fc598/raw/b38c1fb7437dc79cbb5b12a1dcbfa09c32310149/lr_gridsearch.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/terrah27/5c3e9695f4d71cad7edce278636fc598#file-lr_gridsearch-py">lr_gridsearch.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height);var elements = document.getElementsByClassName("gist-data"); for (var i = 0; i < elements.length; i++) {elements[i].style.overflow = "visible"}resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script></body></html>
